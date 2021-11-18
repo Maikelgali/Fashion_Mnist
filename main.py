@@ -141,7 +141,7 @@ def print_hi():
     # Deux couches dense
     model.add(Dense(64, activation="relu"))
     model.add(Dropout(0.2))
-    model.add(Dense(10,activation="softmax"))  # "softmax" pour l'activation, pour avoir la probabilité entre nos deux classes
+    model.add(Dense(10,activation="softmax"))  # "softmax" pour l'activation, pour avoir la probabilité entre nos 10 classes
 
     # Compilation
 
@@ -149,7 +149,7 @@ def print_hi():
 
     # Entraintement du modèle
 
-    history = model.fit(images_t, train_indices, batch_size=64, epochs=10, validation_split=0.2)
+    history = model.fit(images_t, train_indices, batch_size=32, epochs=10, validation_split=0.2)
 
     test_modele = model.evaluate(images_v, val_indices)
     print("\nLa précision du modèle : ", round(test_modele[1], 2), "\nlearning_rate : 0.0005", "\nbatch_size : 32",
